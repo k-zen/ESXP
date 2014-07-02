@@ -1,0 +1,29 @@
+=================== Release 0.1 2014-07-02 =====================
+
+Bug fixes
+• None
+
+Improvement
+• Added support for mapping an XML part (tag) with a Java object predefined by the user. An example is available at "WikiPage" in package test.
+• Added support to search for nodes.
+
+New Feature
+• Example class for how to use the processor.
+
+Task
+• None
+
+Sub-task
+• None
+
+API Changes
+• None
+
+Optimizations
+• None
+
+Test Cases
+• None
+
+Documentation
+• None
