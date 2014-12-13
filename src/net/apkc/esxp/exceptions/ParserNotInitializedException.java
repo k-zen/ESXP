@@ -26,9 +26,10 @@
 package net.apkc.esxp.exceptions;
 
 /**
- * 
- * 
- * @author Andreas P. Koenzen <akc@apkc.net>
+ * Raised when the parser wasn't initialized.
+ *
+ * @author Andreas P. Koenzen <akc at apkc.net>
+ * @version 0.1
  */
 public final class ParserNotInitializedException extends Exception
 {

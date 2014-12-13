@@ -26,9 +26,9 @@
 package net.apkc.esxp.exceptions;
 
 /**
+ * Raised when text wasn't found inside a tag.
  *
- *
- * @author Andreas P. Koenzen <akc@apkc.net>
+ * @author Andreas P. Koenzen <akc at apkc.net>
  * @version 0.1
  */
 public class TextNotFoundException extends Exception

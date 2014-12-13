@@ -39,9 +39,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * XML parser.
+ * XML Processor.
  *
- * @author Andreas P. Koenzen <akc@apkc.net>
+ * @author Andreas P. Koenzen <akc at apkc.net>
  * @version 0.1
  * @see <a href="http://en.wikipedia.org/wiki/Builder_pattern">Builder Pattern</a>
  */
@@ -63,33 +63,33 @@ public class Processor
     /**
      * Walks the DOM tree in search of a given tag and when found retrieves the tag's value.
      *
-     * @param doc      The XML document to parse.
-     * @param rootNode The root node of the XML.
-     * @param tag      The tag's name
-     * @param strict   If TRUE this method will raise an exception if the tag to search was not found. If
-     *                 FALSE will return an empty string.
+     * @param doc          The XML document to parse.
+     * @param rootNodeName The name of the root node of the XML.
+     * @param tag          The tag's name
+     * @param strict       If TRUE this method will raise an exception if the tag to search was not found. If
+     *                     FALSE will return an empty string.
      *
      * @return The tag's value
      *
      * @throws TagNotFoundException If the required tag was not found.
      */
-    public String searchTagValue(Document doc, String rootNode, String tag, boolean strict)
+    public String searchTagValue(Document doc, String rootNodeName, String tag, boolean strict)
             throws TagNotFoundException
     {
-        NodeList nodes = doc.getElementsByTagName(rootNode);
+        NodeList nodes = doc.getElementsByTagName(rootNodeName);
 
         try
         {
-            DOMWalker parser = DOMWalkerFactory.getParser(WALKER).configure(nodes.item(0), DOMWalker.ELEMENT_NODES);
+            DOMWalker walker = DOMWalkerFactory.getWalker(WALKER).configure(nodes.item(0), DOMWalker.ELEMENT_NODES);
 
             if (LOG.isTraceEnabled())
             {
                 LOG.trace(">>> OBTAINING TAG: " + tag);
             }
 
-            while (parser.hasNext())
+            while (walker.hasNext())
             {
-                Node node = parser.nextNode();
+                Node node = walker.nextNode();
 
                 if (LOG.isTraceEnabled())
                 {
@@ -125,7 +125,7 @@ public class Processor
      * Walks the DOM tree in search of a given tag and when found retrieves the tag's attribute value.
      *
      * @param doc           The XML document to parse.
-     * @param rootNode      The root node of the XML.
+     * @param rootNodeName  The name of the root node of the XML.
      * @param tag           The tag's name
      * @param attributeName The attribute name
      * @param strict        If TRUE this method will raise an exception if the tag or attribute to search were not found. If
@@ -136,18 +136,18 @@ public class Processor
      * @throws TagNotFoundException       If the required tag was not found.
      * @throws AttributeNotFoundException If the required attribute was not found.
      */
-    public String searchTagAttributeValue(Document doc, String rootNode, String tag, String attributeName, boolean strict)
+    public String searchTagAttributeValue(Document doc, String rootNodeName, String tag, String attributeName, boolean strict)
             throws TagNotFoundException,
                    AttributeNotFoundException
     {
-        NodeList nodes = doc.getElementsByTagName(rootNode);
+        NodeList nodes = doc.getElementsByTagName(rootNodeName);
 
         try
         {
-            DOMWalker parser = DOMWalkerFactory.getParser(WALKER).configure(nodes.item(0), DOMWalker.ELEMENT_NODES);
-            while (parser.hasNext())
+            DOMWalker walker = DOMWalkerFactory.getWalker(WALKER).configure(nodes.item(0), DOMWalker.ELEMENT_NODES);
+            while (walker.hasNext())
             {
-                Node node = parser.nextNode();
+                Node node = walker.nextNode();
                 if (node.getNodeType() == Node.ELEMENT_NODE)
                 {
                     if (node.getNodeName().equalsIgnoreCase(tag))
@@ -278,13 +278,13 @@ public class Processor
     {
         try
         {
-            DOMWalker parser = DOMWalkerFactory.getParser(WALKER).configure(node, DOMWalker.TEXT_NODES);
-            while (parser.hasNext())
+            DOMWalker walker = DOMWalkerFactory.getWalker(WALKER).configure(node, DOMWalker.TEXT_NODES);
+            while (walker.hasNext())
             {
-                Node currentNode = parser.nextNode();
+                Node currentNode = walker.nextNode();
                 if (currentNode.getNodeType() == Node.COMMENT_NODE)
                 {
-                    parser.skipChildren();
+                    walker.skipChildren();
                 }
 
                 if (currentNode.getNodeType() == Node.TEXT_NODE)
@@ -359,31 +359,31 @@ public class Processor
     /**
      * Walks the DOM tree in search of a given node and when found retrieves the node.
      *
-     * @param doc      The XML document to parse.
-     * @param rootNode The root node of the XML.
-     * @param tag      The tag's name
+     * @param doc          The XML document to parse.
+     * @param rootNodeName The name of the root node of the XML.
+     * @param tag          The tag's name
      *
      * @return The node
      *
      * @throws NodeNotFoundException If the required node was not found.
      */
-    public Node searchNode(Document doc, String rootNode, String tag)
+    public Node searchNode(Document doc, String rootNodeName, String tag)
             throws NodeNotFoundException
     {
-        NodeList nodes = doc.getElementsByTagName(rootNode);
+        NodeList nodes = doc.getElementsByTagName(rootNodeName);
 
         try
         {
-            DOMWalker parser = DOMWalkerFactory.getParser(WALKER).configure(nodes.item(0), DOMWalker.ELEMENT_NODES);
+            DOMWalker walker = DOMWalkerFactory.getWalker(WALKER).configure(nodes.item(0), DOMWalker.ELEMENT_NODES);
 
             if (LOG.isTraceEnabled())
             {
                 LOG.trace(">>> OBTAINING TAG: " + tag);
             }
 
-            while (parser.hasNext())
+            while (walker.hasNext())
             {
-                Node node = parser.nextNode();
+                Node node = walker.nextNode();
 
                 if (LOG.isTraceEnabled())
                 {

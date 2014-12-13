@@ -26,9 +26,9 @@
 package net.apkc.esxp.exceptions;
 
 /**
+ * Raised when a node is invalid.
  *
- *
- * @author Andreas P. Koenzen <akc@apkc.net>
+ * @author Andreas P. Koenzen <akc at apkc.net>
  * @version 0.1
  */
 public class InvalidNodeException extends Exception

@@ -28,7 +28,7 @@ package net.apkc.esxp.walker;
 /**
  * Factory class for the DOM walker.
  *
- * @author Andreas P. Koenzen <akc@apkc.net>
+ * @author Andreas P. Koenzen <akc at apkc.net>
  * @version 0.1
  */
 public class DOMWalkerFactory
@@ -43,7 +43,7 @@ public class DOMWalkerFactory
      *
      * @return A DOM walker instance.
      */
-    public static DOMWalker getParser(byte walkerID)
+    public static DOMWalker getWalker(byte walkerID)
     {
         switch (walkerID)
         {

@@ -79,7 +79,7 @@ import org.w3c.dom.NodeList;
  * </pre>
  * </p>
  *
- * @author Andreas P. Koenzen <akc@apkc.net>
+ * @author Andreas P. Koenzen <akc at apkc.net>
  * @version 0.1
  */
 public class StackDOMWalker extends DOMWalker
@@ -141,13 +141,13 @@ public class StackDOMWalker extends DOMWalker
                 case DOMWalker.ELEMENT_NODES:
                     if (currentChildren.item(i).getNodeType() == Node.ELEMENT_NODE)
                     {
-                        nodes.add(currentChildren.item(i));
+                        nodes.push(currentChildren.item(i));
                     }
                     break;
                 case DOMWalker.TEXT_NODES:
                     if (currentChildren.item(i).getNodeType() == Node.TEXT_NODE)
                     {
-                        nodes.add(currentChildren.item(i));
+                        nodes.push(currentChildren.item(i));
                     }
                     break;
             }

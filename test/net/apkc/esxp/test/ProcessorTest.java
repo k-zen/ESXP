@@ -53,7 +53,7 @@ import org.xml.sax.SAXParseException;
 /**
  * Example and testing class for implementing the processor.
  *
- * @author Andreas P. Koenzen <akc@apkc.net>
+ * @author Andreas P. Koenzen <akc at apkc.net>
  * @version 0.1
  */
 class ProcessorTest
@@ -146,14 +146,14 @@ class ProcessorTest
 
         try
         {
-            DOMWalker mainParser = DOMWalkerFactory.getParser(WALKER).configure(nodes.item(0), DOMWalker.ELEMENT_NODES);
+            DOMWalker mainParser = DOMWalkerFactory.getWalker(WALKER).configure(nodes.item(0), DOMWalker.ELEMENT_NODES);
             while (mainParser.hasNext())
             {
                 Node n1 = mainParser.nextNode();
                 switch (n1.getNodeName())
                 {
                     case "page":
-                        DOMWalker subParser1 = DOMWalkerFactory.getParser(WALKER).configure(n1, DOMWalker.ELEMENT_NODES);
+                        DOMWalker subParser1 = DOMWalkerFactory.getWalker(WALKER).configure(n1, DOMWalker.ELEMENT_NODES);
                         while (subParser1.hasNext())
                         {
                             Node n2 = subParser1.nextNode();
@@ -245,7 +245,7 @@ class ProcessorTest
             long end = System.currentTimeMillis();
             if (LOG.isInfoEnabled())
             {
-                LOG.info("Time: " + (end - start) / 1000 + " seconds, " + (end - start) / 1000 / 60 + " minutes");
+                LOG.info("Time: " + (end - start) + " milliseconds, " + ((float) (end - start) / 1000) + " seconds, " + ((float) (end - start) / 1000 / 60) + " minutes");
             }
 
             // Show pages.

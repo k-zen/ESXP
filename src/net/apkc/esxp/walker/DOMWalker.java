@@ -30,7 +30,7 @@ import org.w3c.dom.Node;
 /**
  * Abstract class representing a DOM walker.
  *
- * @author Andreas P. Koenzen <akc@apkc.net>
+ * @author Andreas P. Koenzen <akc at apkc.net>
  * @version 0.1
  */
 public abstract class DOMWalker

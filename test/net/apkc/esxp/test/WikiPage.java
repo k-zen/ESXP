@@ -33,11 +33,11 @@ import net.apkc.esxp.processor.UnmarshalledObject;
 /**
  * Example class for how to implement an {@link UnmarshalledObject}.
  *
- * @author Andreas P. Koenzen <akc@apkc.net>
+ * @author Andreas P. Koenzen <akc at apkc.net>
  * @version 0.1
  * @see Builder Pattern
  */
-public class WikiPage extends UnmarshalledObject
+class WikiPage extends UnmarshalledObject
 {
 
     private String title = "";
@@ -57,92 +57,92 @@ public class WikiPage extends UnmarshalledObject
     private String revModel = "";
     private String revFormat = "";
 
-    public static WikiPage newBuild()
+    static WikiPage newBuild()
     {
         return new WikiPage();
     }
 
-    public String getTitle()
+    String getTitle()
     {
         return title;
     }
 
-    public String getNS()
+    String getNS()
     {
         return ns;
     }
 
-    public String getId()
+    String getId()
     {
         return id;
     }
 
-    public String getRevId()
+    String getRevId()
     {
         return revId;
     }
 
-    public String getRevParentId()
+    String getRevParentId()
     {
         return revParentId;
     }
 
-    public String getRevTimestamp()
+    String getRevTimestamp()
     {
         return revTimestamp;
     }
 
-    public String getRevContributorUsername()
+    String getRevContributorUsername()
     {
         return revContributorUsername;
     }
 
-    public String getRevContributorId()
+    String getRevContributorId()
     {
         return revContributorId;
     }
 
-    public String getRevMinor()
+    String getRevMinor()
     {
         return revMinor;
     }
 
-    public String getRevComment()
+    String getRevComment()
     {
         return revComment;
     }
 
-    public String getRevText()
+    String getRevText()
     {
         return revText;
     }
 
-    public String getRevTextId()
+    String getRevTextId()
     {
         return revTextId;
     }
 
-    public String getRevTextBytes()
+    String getRevTextBytes()
     {
         return revTextBytes;
     }
 
-    public String getRevSHA1()
+    String getRevSHA1()
     {
         return revSHA1;
     }
 
-    public String getRevModel()
+    String getRevModel()
     {
         return revModel;
     }
 
-    public String getRevFormat()
+    String getRevFormat()
     {
         return revFormat;
     }
 
-    public WikiPage setTitle(String p)
+    WikiPage setTitle(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -154,7 +154,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setNS(String p)
+    WikiPage setNS(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -166,7 +166,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setId(String p)
+    WikiPage setId(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -178,7 +178,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevId(String p)
+    WikiPage setRevId(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -190,7 +190,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevParentId(String p)
+    WikiPage setRevParentId(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -202,7 +202,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevTimestamp(String p)
+    WikiPage setRevTimestamp(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -214,7 +214,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevContributorUsername(String p)
+    WikiPage setRevContributorUsername(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -226,7 +226,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevContributorId(String p)
+    WikiPage setRevContributorId(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -238,7 +238,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevMinor(String p)
+    WikiPage setRevMinor(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -250,7 +250,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevComment(String p)
+    WikiPage setRevComment(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -262,7 +262,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevText(String p)
+    WikiPage setRevText(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -274,7 +274,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevTextId(String p)
+    WikiPage setRevTextId(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -286,7 +286,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevTextBytes(String p)
+    WikiPage setRevTextBytes(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -298,7 +298,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevSHA1(String p)
+    WikiPage setRevSHA1(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -310,7 +310,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevModel(String p)
+    WikiPage setRevModel(String p)
     {
         // Don't allow null values!
         if (p == null)
@@ -322,7 +322,7 @@ public class WikiPage extends UnmarshalledObject
         return this;
     }
 
-    public WikiPage setRevFormat(String p)
+    WikiPage setRevFormat(String p)
     {
         // Don't allow null values!
         if (p == null)

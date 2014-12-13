@@ -31,7 +31,7 @@ import org.apache.log4j.Logger;
 /**
  * Skeleton class for processed objects.
  *
- * @author Andreas P. Koenzen <akc@apkc.net>
+ * @author Andreas P. Koenzen <akc at apkc.net>
  * @version 0.1
  */
 public abstract class UnmarshalledObject extends Object implements Comparable, Externalizable
