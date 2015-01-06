@@ -1,3 +1,7 @@
+=================== Release 0.2 XXXX-XX-XX =====================
+Changes
+    * Minor modification to class SAX2DOM, where the type of object for each collection has been defined. (06/01/15)
+
 =================== Release 0.1 2014-07-02 =====================
 Improvement
     * Added support for mapping an XML part (tag) with a Java object predefined by the user. An example is available at "WikiPage" in package test.

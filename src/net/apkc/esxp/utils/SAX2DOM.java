@@ -44,8 +44,8 @@ public class SAX2DOM implements ContentHandler, LexicalHandler
     private Node _root = null;
     private Document _document = null;
     private Node _nextSibling = null;
-    private Stack _nodeStk = new Stack();
-    private Vector _namespaceDecls = null;
+    private Stack<Node> _nodeStk = new Stack<>();
+    private Vector<String> _namespaceDecls = null;
     private Node _lastSibling = null;
 
     public SAX2DOM() throws ParserConfigurationException
@@ -193,7 +193,7 @@ public class SAX2DOM implements ContentHandler, LexicalHandler
     {
         if (_namespaceDecls == null)
         {
-            _namespaceDecls = new Vector(2);
+            _namespaceDecls = new Vector<>(2);
         }
         _namespaceDecls.addElement(prefix);
         _namespaceDecls.addElement(uri);
